@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/spin.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#submitbtn").click(function () {
+                $("#loading").fadeIn();
+                var opts = {
+                    lines: 12, // The number of lines to draw
+                    length: 7, // The length of each line
+                    width: 4, // The line thickness
+                    radius: 10, // The radius of the inner circle
+                    color: '#000', // #rgb or #rrggbb
+                    speed: 1, // Rounds per second
+                    trail: 60, // Afterglow percentage
+                    shadow: false, // Whether to render a shadow
+                    hwaccel: false // Whether to use hardware acceleration
+                };
+                var target = document.getElementById('loading');
+                var spinner = new Spinner(opts).spin(target);
+            });
+        });
+    </script>
+}
+
+<style type="text/css">
+    #loading
+    {
+        display:none;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(255,255,255,0.8);
+        z-index:1000;
+    }
+    
+    #loadingcontent
+    {
+        display:table;
+        position:fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+    }
+    
+    #loadingspinner
+    {
+        display: table-cell;
+        vertical-align:middle;
+        width: 100%;
+        text-align: center;
+        font-size:larger;
+        padding-top:80px;
+    }
+</style>
+
+<div class="page-header">
+    <h2>
+        Waiting Animation Demo
+        <a href="http://www.tkglaser.net/2012/02/waiting-spinner-for-long-running-form.html" class="btn btn-success">
+            Read blog post
+        </a>
+    </h2>
+    <p>Enter something and press the search button</p>
+</div>
+
+<div id="loading">
+    <div id="loadingcontent" style="">
+        <p id="loadingspinner" style="">
+            Searching things...
+        </p>
+    </div>
+</div>
+
+<div class="form-horizontal">
+    @using (Html.BeginForm())
+    {
+        <div class="control-group">
+            <label class="control-label" for="search">Search for things</label>
+            <div class="controls">
+                @Html.TextBox("search")
+            </div>
+        </div>
+    
+        <div class="form-actions">
+            <input id="submitbtn" type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    }
+</div>
