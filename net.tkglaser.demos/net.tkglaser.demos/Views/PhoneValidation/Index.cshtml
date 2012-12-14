@@ -4,32 +4,30 @@
     ViewBag.Title = "EnterDetails";
 }
 
-<h2>EnterDetails</h2>
+<div class="page-header">
+    <h2>Phone Validation Demo</h2>
+</div>
 
-
+<div class="form-horizontal">
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>DetailsModel</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
-        </div>
-        <div class="editor-field">
+    
+    <div class="control-group">
+        <label class="control-label" for="Phone">Phone Number</label>
+        <div class="controls">
             @Html.EditorFor(model => model.Phone)
             @Html.ValidationMessageFor(model => model.Phone)
         </div>
-
-        <h2>
+    </div>
+    
+    <div class="control-group">
+        <div class="controls">
             @Html.DisplayFor(model => model.PhoneNumberFormatted)
-        </h2>
-
-        <p>
-            <input type="submit" value="Validate" />
-        </p>
-    </fieldset>
+        </div>
+    </div>
+    
+    <div class="form-actions">
+        <input type="submit" value="Validate" class="btn btn-primary" />
+    </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
