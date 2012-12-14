@@ -10,13 +10,13 @@ namespace net.tkglaser.demos.Controllers
 {
     public class PhoneValidationController : Controller
     {
-        public ActionResult EnterDetails()
+        public ActionResult Index()
         {
             return View(new DetailsModel());
         }
 
         [HttpPost]
-        public ActionResult EnterDetails(DetailsModel model)
+        public ActionResult Index(DetailsModel model)
         {
             try
             {

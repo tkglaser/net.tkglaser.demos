@@ -1,0 +1,35 @@
+﻿@model net.tkglaser.demos.Models.Phone.DetailsModel
+
+@{
+    ViewBag.Title = "EnterDetails";
+}
+
+<h2>EnterDetails</h2>
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>DetailsModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <h2>
+            @Html.DisplayFor(model => model.PhoneNumberFormatted)
+        </h2>
+
+        <p>
+            <input type="submit" value="Validate" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
