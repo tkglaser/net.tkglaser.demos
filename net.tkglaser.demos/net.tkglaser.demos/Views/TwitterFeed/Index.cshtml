@@ -1,0 +1,30 @@
+﻿@model net.tkglaser.demos.Models.TwitterFeed.LandingModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    li {
+        padding-bottom:10px;
+    }
+</style>
+
+<div class="page-header">
+    <h2>
+        Simple Twitter Feed Demo
+        <a href="http://www.tkglaser.net/2012/12/a-simple-twitter-feed-in-mvc-4-using.html" class="btn btn-success">
+            Read blog post
+        </a>
+    </h2>
+</div>
+
+<ul>
+  @foreach (var tweet in Model.Tweets)
+  {
+    <li>
+      <img src="@tweet.user.profile_image_url" />
+      @Html.Raw(tweet.GetTextWithLinks())
+    </li>
+  }
+</ul>
