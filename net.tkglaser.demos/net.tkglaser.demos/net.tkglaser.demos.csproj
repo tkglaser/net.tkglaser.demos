@@ -135,6 +135,7 @@
     <Compile Include="Controllers\PhoneValidationController.cs" />
     <Compile Include="Controllers\SpinnerController.cs" />
     <Compile Include="Controllers\TwitterFeedController.cs" />
+    <Compile Include="Controllers\TwitterLayoutController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,6 +251,10 @@
     <Content Include="Views\Spinner\Index.cshtml" />
     <Content Include="Views\Conway3D\Index.cshtml" />
     <Content Include="Views\TwitterFeed\Index.cshtml" />
+    <Content Include="Views\TwitterLayout\Tweets.cshtml" />
+    <Content Include="Views\TwitterLayout\_TwitterLayout.cshtml" />
+    <Content Include="Views\TwitterLayout\Page1.cshtml" />
+    <Content Include="Views\TwitterLayout\Page2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

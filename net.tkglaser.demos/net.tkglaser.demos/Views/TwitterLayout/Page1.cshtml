@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Page1";
+    Layout = "~/Views/TwitterLayout/_TwitterLayout.cshtml";
+}
+
+<div class="page-header">
+    <h2>
+        Twitter Feed in Layout Demo
+        <a href="#" class="btn btn-success">
+            Read blog post
+        </a>
+    </h2>
+    <p>Switch between Page 1 and Page 2. The Twitter feed is in the layout and will not change</p>
+</div>
+
+<a href="@Url.Action("Page1")" class="btn disabled">Page 1</a>
+<a href="@Url.Action("Page2")" class="btn">Page 2</a>
+
+<div class="well">
+    <h3>This is page 1.</h3>
+    <p>Click the button above to go to page 2</p>
+</div>

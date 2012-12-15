@@ -1,0 +1,11 @@
+﻿@model net.tkglaser.demos.Models.TwitterFeed.LandingModel
+
+<ul>
+  @foreach (var tweet in Model.Tweets)
+  {
+    <li>
+      <img src="@tweet.user.profile_image_url" />
+      @Html.Raw(tweet.GetTextWithLinks())
+    </li>
+  }
+</ul>
