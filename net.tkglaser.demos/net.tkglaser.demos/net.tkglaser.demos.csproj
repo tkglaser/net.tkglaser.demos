@@ -256,6 +256,8 @@
     <Content Include="Views\TwitterLayout\_TwitterLayout.cshtml" />
     <Content Include="Views\TwitterLayout\Page1.cshtml" />
     <Content Include="Views\TwitterLayout\Page2.cshtml" />
+    <Content Include="Views\Conway3D\WebGL.cshtml" />
+    <Content Include="Views\Conway3D\Canvas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

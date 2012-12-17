@@ -16,5 +16,15 @@ namespace net.tkglaser.demos.Controllers
             return View();
         }
 
+        public ActionResult Canvas()
+        {
+            return View();
+        }
+
+        public ActionResult WebGL()
+        {
+            return View();
+        }
+
     }
 }
