@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhoneValidationController.cs" />
     <Compile Include="Controllers\SpinnerController.cs" />
+    <Compile Include="Controllers\StarTrekController.cs" />
     <Compile Include="Controllers\TwitterFeedController.cs" />
     <Compile Include="Controllers\TwitterLayoutController.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +214,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <None Include="Properties\PublishProfiles\net-tkglaser-playground.pubxml" />
     <None Include="Scripts\jquery-1.8.3.intellisense.js" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
@@ -232,6 +234,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\meshes\Startrek_Enterprise.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\spin.min.js" />
     <Content Include="Scripts\three.js" />
@@ -261,6 +264,7 @@
     <Content Include="Views\Conway3D\Canvas.cshtml" />
     <Content Include="Views\Conway3D2\WebGL.cshtml" />
     <Content Include="Views\Conway3D2\Index.cshtml" />
+    <Content Include="Views\StarTrek\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

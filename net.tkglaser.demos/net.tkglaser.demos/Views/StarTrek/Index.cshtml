@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>tkglaser.net - Conway 3Dv2 (WebGL)</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29021529-2']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+		<script src="~/Scripts/three.min.js"></script>
+	</head>
+	<body>
+		<script>var camera, scene, renderer, geometry, material, mesh;
+
+		    init();
+		    animate();
+
+		    function init() {
+
+		        scene = new THREE.Scene();
+
+		        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+		        camera.position.z = 1000;
+		        scene.add(camera);
+
+		        var light = new THREE.DirectionalLight();  // changed to directional light - easier as a first step
+		        light.position.set(10, 10, 10).normalize(); // for directional lights, position is actually a direction vector
+		        scene.add(light);
+
+		        /*
+                var loader = new THREE.JSONLoader();
+                var callbackDice = function(geometry) {
+                    createMesh(geometry);
+                };
+                loader.load("models/dice.js", callbackDice);
+                */
+
+		        var loader = new THREE.JSONLoader();
+		        loader.load("scripts/meshes/Startrek_Enterprise.js", function (geometry) {
+		            createMesh(geometry);
+		        });
+
+		        //geometry = new THREE.CubeGeometry(2, 2, 2); // to get something to work, since model is not available
+		        //createMesh(geometry);
+
+		        renderer = new THREE.WebGLRenderer(); // changed to WebGLRenderer
+		        renderer.setSize(window.innerWidth, window.innerHeight);
+		        renderer.sortObjects = true;
+
+		        document.body.appendChild(renderer.domElement);
+
+		    }
+
+		    function createMesh(geometry) {
+		        mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff })); // changed to Lambert
+		        mesh.position.set(0, 0, 0);
+		        mesh.scale.set(100, 100, 100);
+		        mesh.overdraw = true;
+		        scene.add(mesh);
+		    }
+
+		    function animate() {
+
+		        // note: three.js includes requestAnimationFrame shim
+		        requestAnimationFrame(animate);
+		        render();
+
+		    }
+
+		    function render() {
+		        if (mesh) {
+		            mesh.rotation.x += 0.01;
+		            mesh.rotation.y += 0.02;
+		        }
+
+		        renderer.render(scene, camera);
+
+		    }</script>
+	</body>
+</html>
